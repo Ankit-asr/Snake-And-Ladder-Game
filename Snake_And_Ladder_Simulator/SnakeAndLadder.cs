@@ -2,18 +2,20 @@
 
 namespace Snake_And_Ladder_Simulator
 {
-    class SnakeAndLadder
+	class SnakeAndLadder
 	{
 		const int NO_PLAY = 0;
 		const int LADDER = 1;
 		const int SNAKE = 2;
 		const int WINNING_POSITION = 100;
-		public void AbsoluteWinPosition()
+		public void AbsoluteWinCount()
 		{
 			int currentPlayerPosition = 0;
+			int diceCount = 0;
 			Console.WriteLine("Your starting position : " + currentPlayerPosition);
 			while (currentPlayerPosition < WINNING_POSITION)
 			{
+				diceCount += 1;
 				Console.WriteLine("Press Enter to Roll Die");
 				Console.ReadKey();
 				Random random = new Random();
@@ -49,7 +51,8 @@ namespace Snake_And_Ladder_Simulator
 						break;
 				}
 			}
-			Console.WriteLine("You reached the WINNING POSITION");		}
+			Console.WriteLine("You reached the WINNING POSITION");
+			Console.WriteLine("Number of times dice was played :" + diceCount);
+		}
 	}
 }
-
