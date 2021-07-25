@@ -7,7 +7,7 @@ namespace Snake_And_Ladder_Simulator
         static void Main(string[] args)
         {
             SnakeAndLadder obj = new SnakeAndLadder();
-            obj.GetOption();
+            obj.PlayTillWin();
         }
     }
 }
