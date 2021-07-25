@@ -8,7 +8,7 @@ namespace Snake_And_Ladder_Simulator
 		const int LADDER = 1;
 		const int SNAKE = 2;
 		const int WINNING_POSITION = 100;
-		public void PlayTillWin()
+		public void AbsoluteWinPosition()
 		{
 			int currentPlayerPosition = 0;
 			Console.WriteLine("Your starting position : " + currentPlayerPosition);
@@ -30,20 +30,26 @@ namespace Snake_And_Ladder_Simulator
 						break;
 					case (LADDER):
 						Console.WriteLine(" You got Ladder");
-						currentPlayerPosition += rollResult;
+						if ((currentPlayerPosition + rollResult) <= WINNING_POSITION)
+							currentPlayerPosition += rollResult;
 						Console.WriteLine(" Your position after die roll :" + currentPlayerPosition);
 						break;
 					case (SNAKE):
 						Console.WriteLine(" You got Snake");
 						if (currentPlayerPosition >= rollResult)
+						{
 							currentPlayerPosition -= rollResult;
+							Console.WriteLine(" Your position after die roll :" + currentPlayerPosition);
+						}
 						else
+						{
 							currentPlayerPosition = 0;
 							Console.WriteLine(" Your position after die roll :" + currentPlayerPosition);
+						}
 						break;
 				}
 			}
-		}
+			Console.WriteLine("You reached the WINNING POSITION");		}
 	}
 }
 
